@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Booking));
             this.cmbFrom = new System.Windows.Forms.ComboBox();
             this.cmbTo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dTPicker = new System.Windows.Forms.DateTimePicker();
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.cmbTicket = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dTPicker = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.panelBook = new System.Windows.Forms.Panel();
             this.btnBook = new System.Windows.Forms.Button();
@@ -53,6 +56,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.panelBook.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +67,11 @@
             this.cmbFrom.FormattingEnabled = true;
             this.cmbFrom.ItemHeight = 13;
             this.cmbFrom.Items.AddRange(new object[] {
-            "London"});
+            "London",
+            "Paris",
+            "Newyork",
+            "Hong Kong",
+            "Colombo"});
             this.cmbFrom.Location = new System.Drawing.Point(20, 51);
             this.cmbFrom.Name = "cmbFrom";
             this.cmbFrom.Size = new System.Drawing.Size(142, 21);
@@ -73,7 +82,11 @@
             this.cmbTo.FormattingEnabled = true;
             this.cmbTo.ItemHeight = 13;
             this.cmbTo.Items.AddRange(new object[] {
-            "Paris"});
+            "London",
+            "Paris",
+            "Newyork",
+            "Hong Kong",
+            "Colombo"});
             this.cmbTo.Location = new System.Drawing.Point(20, 99);
             this.cmbTo.Name = "cmbTo";
             this.cmbTo.Size = new System.Drawing.Size(142, 21);
@@ -96,13 +109,6 @@
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "To";
-            // 
-            // dTPicker
-            // 
-            this.dTPicker.Location = new System.Drawing.Point(20, 143);
-            this.dTPicker.Name = "dTPicker";
-            this.dTPicker.Size = new System.Drawing.Size(215, 20);
-            this.dTPicker.TabIndex = 4;
             // 
             // cmbClass
             // 
@@ -156,8 +162,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnReset);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dTPicker);
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cmbFrom);
             this.panel1.Controls.Add(this.label4);
@@ -171,6 +179,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(249, 323);
             this.panel1.TabIndex = 10;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(20, 132);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Date";
+            // 
+            // dTPicker
+            // 
+            this.dTPicker.Location = new System.Drawing.Point(23, 148);
+            this.dTPicker.Name = "dTPicker";
+            this.dTPicker.Size = new System.Drawing.Size(139, 20);
+            this.dTPicker.TabIndex = 11;
             // 
             // btnReset
             // 
@@ -185,6 +210,7 @@
             // 
             // panelBook
             // 
+            this.panelBook.BackColor = System.Drawing.Color.Transparent;
             this.panelBook.Controls.Add(this.btnBook);
             this.panelBook.Controls.Add(this.textBox5);
             this.panelBook.Controls.Add(this.label9);
@@ -255,7 +281,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "Paris";
             // 
             // label5
             // 
@@ -273,7 +298,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "London";
             // 
             // label7
             // 
@@ -313,14 +337,33 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(293, 13);
+            this.progressBar1.Maximum = 50;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(500, 23);
+            this.progressBar1.TabIndex = 12;
+            this.progressBar1.Visible = false;
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(910, 454);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.panelBook);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Booking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Booking_FormClosed);
             this.panel1.ResumeLayout(false);
@@ -337,7 +380,6 @@
         private System.Windows.Forms.ComboBox cmbTo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dTPicker;
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.ComboBox cmbTicket;
         private System.Windows.Forms.Label label3;
@@ -358,5 +400,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox dTPicker;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

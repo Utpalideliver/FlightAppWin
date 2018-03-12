@@ -24,15 +24,27 @@ namespace FlightApp
             cmbTo.SelectedIndex = 0;
             cmbClass.SelectedIndex = 0;
             cmbTicket.SelectedIndex = 0;
-            dTPicker.MinDate = DateTime.Now;
-            dTPicker.Value = DateTime.Now;
+            dTPicker.Text = Convert.ToString(DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year);
             panelBook.Visible = false;
         }
         //DateTime selectDate;
         private void button1_Click(object sender, EventArgs e)
         {
-            panelBook.Visible = true;
-            txtDate.Text = Convert.ToString(dTPicker.Value);
+            if(cmbFrom.Text == cmbTo.Text)
+            {
+                MessageBox.Show("Both cities are same!!!!");
+            }
+            else
+            {
+                this.timer1.Start();
+                progressBar1.Visible = false;
+
+                panelBook.Visible = true;
+                textBox2.Text = cmbFrom.Text;
+                textBox3.Text = cmbTo.Text;
+                txtDate.Text = Convert.ToString(dTPicker.Text);
+                
+            }
             
         }
        
@@ -50,7 +62,20 @@ namespace FlightApp
 
         private void Booking_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            this.Hide();
+            Login l1 =new Login();l1.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Visible = true;
+            this.progressBar1.Increment(1);
         }
     }
 }
