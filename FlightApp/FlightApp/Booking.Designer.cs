@@ -40,10 +40,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.dTPicker = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.panelBook = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnBook = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,7 +60,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.panelBook.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +78,8 @@
             this.cmbFrom.Name = "cmbFrom";
             this.cmbFrom.Size = new System.Drawing.Size(142, 21);
             this.cmbFrom.TabIndex = 0;
+            this.cmbFrom.SelectedIndexChanged += new System.EventHandler(this.cmbFrom_SelectedIndexChanged);
+            this.cmbFrom.MouseHover += new System.EventHandler(this.cmbFrom_MouseHover);
             // 
             // cmbTo
             // 
@@ -163,6 +167,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dTPicker);
             this.panel1.Controls.Add(this.btnReset);
@@ -180,6 +186,29 @@
             this.panel1.Size = new System.Drawing.Size(249, 323);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(123, 12);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(78, 17);
+            this.radioButton3.TabIndex = 14;
+            this.radioButton3.Text = "Round Trip";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(20, 12);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(67, 17);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "One way";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label10
             // 
@@ -211,6 +240,7 @@
             // panelBook
             // 
             this.panelBook.BackColor = System.Drawing.Color.Transparent;
+            this.panelBook.Controls.Add(this.progressBar1);
             this.panelBook.Controls.Add(this.btnBook);
             this.panelBook.Controls.Add(this.textBox5);
             this.panelBook.Controls.Add(this.label9);
@@ -227,6 +257,15 @@
             this.panelBook.Name = "panelBook";
             this.panelBook.Size = new System.Drawing.Size(592, 323);
             this.panelBook.TabIndex = 11;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(34, 240);
+            this.progressBar1.Maximum = 50;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(394, 29);
+            this.progressBar1.TabIndex = 12;
+            this.progressBar1.Visible = false;
             // 
             // btnBook
             // 
@@ -342,15 +381,6 @@
             this.timer1.Interval = 5;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(293, 13);
-            this.progressBar1.Maximum = 50;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(500, 23);
-            this.progressBar1.TabIndex = 12;
-            this.progressBar1.Visible = false;
-            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,7 +388,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(910, 454);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.panelBook);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -404,5 +433,7 @@
         private System.Windows.Forms.TextBox dTPicker;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

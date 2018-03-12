@@ -77,5 +77,21 @@ namespace FlightApp
             progressBar1.Visible = true;
             this.progressBar1.Increment(1);
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void cmbFrom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbFrom_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.cmbFrom, "Enter Source City");
+        }
     }
 }
