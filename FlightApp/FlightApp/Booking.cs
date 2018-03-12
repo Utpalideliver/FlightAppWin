@@ -24,15 +24,15 @@ namespace FlightApp
             cmbTo.SelectedIndex = 0;
             cmbClass.SelectedIndex = 0;
             cmbTicket.SelectedIndex = 0;
-            dTPicker.MinDate = DateTime.Now;
-            dTPicker.Value = DateTime.Now;
+            dTPicker.Text = Convert.ToString(DateTime.Now.Day +"/"+ DateTime.Now.Month + "/" + DateTime.Now.Year);
+            //dTPicker.Value = DateTime.Now;
             panelBook.Visible = false;
         }
         //DateTime selectDate;
         private void button1_Click(object sender, EventArgs e)
         {
             panelBook.Visible = true;
-            txtDate.Text = Convert.ToString(dTPicker.Value);
+            txtDate.Text = Convert.ToString(dTPicker.Text);
             
         }
        

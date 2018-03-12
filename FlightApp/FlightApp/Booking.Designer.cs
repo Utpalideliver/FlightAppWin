@@ -32,7 +32,6 @@
             this.cmbTo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dTPicker = new System.Windows.Forms.DateTimePicker();
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.cmbTicket = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +52,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.dTPicker = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelBook.SuspendLayout();
             this.SuspendLayout();
@@ -96,13 +97,6 @@
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "To";
-            // 
-            // dTPicker
-            // 
-            this.dTPicker.Location = new System.Drawing.Point(20, 143);
-            this.dTPicker.Name = "dTPicker";
-            this.dTPicker.Size = new System.Drawing.Size(215, 20);
-            this.dTPicker.TabIndex = 4;
             // 
             // cmbClass
             // 
@@ -156,8 +150,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnReset);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dTPicker);
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cmbFrom);
             this.panel1.Controls.Add(this.label4);
@@ -313,6 +308,22 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // dTPicker
+            // 
+            this.dTPicker.Location = new System.Drawing.Point(20, 145);
+            this.dTPicker.Name = "dTPicker";
+            this.dTPicker.Size = new System.Drawing.Size(142, 20);
+            this.dTPicker.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(20, 129);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Date";
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,7 +348,6 @@
         private System.Windows.Forms.ComboBox cmbTo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dTPicker;
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.ComboBox cmbTicket;
         private System.Windows.Forms.Label label3;
@@ -358,5 +368,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox dTPicker;
     }
 }
