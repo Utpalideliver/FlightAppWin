@@ -43,7 +43,7 @@ namespace FlightApp
                 textBox2.Text = cmbFrom.Text;
                 textBox3.Text = cmbTo.Text;
                 txtDate.Text = Convert.ToString(dTPicker.Text);
-                
+                  
             }
             
         }

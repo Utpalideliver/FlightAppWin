@@ -70,7 +70,6 @@
             this.cmbFrom.ItemHeight = 13;
             this.cmbFrom.Items.AddRange(new object[] {
             "London",
-            "Paris",
             "Newyork",
             "Hong Kong",
             "Colombo"});
@@ -86,7 +85,6 @@
             this.cmbTo.FormattingEnabled = true;
             this.cmbTo.ItemHeight = 13;
             this.cmbTo.Items.AddRange(new object[] {
-            "London",
             "Paris",
             "Newyork",
             "Hong Kong",

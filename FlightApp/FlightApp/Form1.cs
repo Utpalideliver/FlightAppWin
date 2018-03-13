@@ -19,7 +19,7 @@ namespace FlightApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text.ToLower()=="admin")
+            if(txtUser.Text.ToLower()=="admin" && txtPass.Text.ToLower() == "admin")
             {
                 Booking book = new Booking();
                 this.Hide();
