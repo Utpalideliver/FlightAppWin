@@ -69,10 +69,7 @@
             this.cmbFrom.FormattingEnabled = true;
             this.cmbFrom.ItemHeight = 13;
             this.cmbFrom.Items.AddRange(new object[] {
-            "London",
-            "Newyork",
-            "Hong Kong",
-            "Colombo"});
+            "None"});
             this.cmbFrom.Location = new System.Drawing.Point(20, 51);
             this.cmbFrom.Name = "cmbFrom";
             this.cmbFrom.Size = new System.Drawing.Size(142, 21);
@@ -85,10 +82,7 @@
             this.cmbTo.FormattingEnabled = true;
             this.cmbTo.ItemHeight = 13;
             this.cmbTo.Items.AddRange(new object[] {
-            "Paris",
-            "Newyork",
-            "Hong Kong",
-            "Colombo"});
+            "None"});
             this.cmbTo.Location = new System.Drawing.Point(20, 99);
             this.cmbTo.Name = "cmbTo";
             this.cmbTo.Size = new System.Drawing.Size(142, 21);
