@@ -24,6 +24,7 @@ namespace FlightApp
                 Booking book = new Booking();
                 this.Hide();
                 book.Show();
+
             }
             else
             {
