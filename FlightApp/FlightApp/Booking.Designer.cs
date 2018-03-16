@@ -396,7 +396,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.ComboBox cmbFrom;
         private System.Windows.Forms.ComboBox cmbTo;
         private System.Windows.Forms.Label label1;
