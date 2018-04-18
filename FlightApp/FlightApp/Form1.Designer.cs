@@ -126,8 +126,8 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label User;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.TextBox txtPass;
+        public System.Windows.Forms.TextBox txtUser;
+        public System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
     }
