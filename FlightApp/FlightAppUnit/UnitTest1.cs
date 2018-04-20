@@ -1,13 +1,13 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using NUnit.Framework;
 
 namespace FlightAppUnit
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod]
-        [Priority(0)]
+        [Test, Order(1)]
         public void logintest()
         {
             //Arrange
@@ -19,7 +19,7 @@ namespace FlightAppUnit
             bool result = login_Test.dologin("admin", "admin");
 
             //Assert
-            Assert.IsTrue(result);
+            NUnit.Framework.Assert.IsTrue(result);
         }
     }
 }
